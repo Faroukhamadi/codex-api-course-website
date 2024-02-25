@@ -1,0 +1,23 @@
+{
+  "author": {
+    "name": "Farouk Hamadi",
+    "company": "Renabled"
+  },
+  "title": "API Design with Node.js",
+  "subtitle": "for Codex Junior entreprise",
+  "frontendMastersLink": "https://frontendmasters.com/courses/api-design-nodejs-v4/",
+  "social": {
+    "linkedin": "farouk-hamadi-b1a448235",
+    "github": "Faroukhamadi",
+    "twitter": "FaroukHamadii"
+  },
+  "description": "Learn to build APIs with Node.js",
+  "keywords": [
+    "API",
+    "Node.js",
+    "Prisma",
+    "Database"
+  ],
+  "productionBaseUrl": "/API-design-v4",
+  "csvPath": "./out/lessons.csv"
+}
