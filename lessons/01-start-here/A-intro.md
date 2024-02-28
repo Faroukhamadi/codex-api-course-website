@@ -3,10 +3,10 @@ title: "Introduction"
 description: "The introduction to this course."
 ---
 
-# Hi,
+# Hi
 
-And welcome to the API Design with v4 course by [Scott Moss][twitter].
-This course website was specifically made for making online courses and optimized for use with [Frontend Masters][fem].
+And welcome to the API Design course by [Farouk Hamadi][twitter].
+If you want to check out other free courses, you can log in with your student account at [Frontend Masters][fem] for free.
 
-[twitter]: https://twitter.com/scotups
+[twitter]: https://twitter.com/FaroukHamadii
 [fem]: https://www.frontendmasters.com

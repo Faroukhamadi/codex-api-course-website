@@ -9,7 +9,7 @@ When it comes to building out production-ready API's, there are several moving p
 
 ## Runtime
 
-We'll be using **Node.js** for this course. Why? Node.js uses JS as the language of choice. If you've worked on web apps, then you know JS. Node.js has a rich, active ecosystem as well. I also know Node.js the best. Alternatives include Ruby, Python, Java, Go, Rust, and many more.
+We'll be using **Node.js** for this course. Why? Node.js uses JS as the language of choice. If you've worked on web apps, then you know JS. Node.js has a rich, active ecosystem as well. I also know Node.js pretty well. Alternatives include Ruby, Python, Java, Go, Rust, and many more.
 
 ## Framework
 
