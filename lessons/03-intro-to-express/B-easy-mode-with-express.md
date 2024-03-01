@@ -13,7 +13,7 @@ Next, let's create a simple API!
 ```javascript
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = 42069;
 const path = require("path");
 
 app.use(express.static("static"));

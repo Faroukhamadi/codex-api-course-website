@@ -23,7 +23,7 @@ const server = http.createServer(async (req, res) => {
   res.end(JSON.stringify({ message: "nope" }));
 });
 
-const PORT = process.env.PORT;
+const PORT = 42069;
 
 server.listen(PORT, () => {
   console.log(`server on ${PORT}`);
