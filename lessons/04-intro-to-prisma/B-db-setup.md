@@ -9,29 +9,10 @@ We'll be using PSQL as a DB in this course. You won't have to install anything a
 
 ## Installing Prisma
 
-Prisma works best when you're using a TypeScript. So in addition to installing Prisma, we're going to convert our app to TypeScript. Don't worry if you don't know TypeScript. We won't be doing all the fancy typed stuff in this course. We just want that sweet autocomplete for our DB interactions through Prisma. Trust me, its magical ✨. On to the installing!
+`npm i prisma --save-dev`
 <br>
-<br>
-`npm i typescript ts-node @types/node prisma --save-dev`
-<br>
-<br>
-Then create a `tsconfig.json` file which is the config file for TypeScript. Add this to that file:
 <br>
 
-```json
-{
-  "compilerOptions": {
-    "sourceMap": true,
-    "outDir": "dist",
-    "strict": true,
-    "lib": ["esnext"],
-    "esModuleInterop": true
-  }
-}
-```
-
-<br>
-<br>
 Next, we'll initalize Prisma
 <br>
 

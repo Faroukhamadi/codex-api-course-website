@@ -11,6 +11,8 @@ When it comes to building out production-ready API's, there are several moving p
 
 We'll be using **Node.js** for this course. Why? Node.js uses JS as the language of choice. If you've worked on web apps, then you know JS. Node.js has a rich, active ecosystem as well. I also know Node.js pretty well. Alternatives include Ruby, Python, Java, Go, Rust, and many more.
 
+![Node.js](./images/iq.jpeg)
+
 ## Framework
 
 We could create an API without a framework, but that wouldn't be the best use of our time and isn't taking advantage of an amazing ecosystem at our fingertips. So, we'll be using **Express** to create our API inside of Node.js.

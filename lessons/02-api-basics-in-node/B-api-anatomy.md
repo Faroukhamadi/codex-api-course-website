@@ -23,6 +23,7 @@ HTTP Methods or Verbs are constants that are used by API developers and HTTP to 
 - `PATCH` - used to update existing information on an API. Usually has data sent along with the request.
 - `DELETE`- used to remove existing information on an API.
 - `OPTIONS` - used with CORS by browsers to check to see if the client is able to actually communicate with an API
+![CORS](./images/cors.png)
 
 Here are some examples of routes:
 

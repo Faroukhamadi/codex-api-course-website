@@ -10,7 +10,7 @@
 1. Clone this repo
 1. Run `npm install`
 1. Run `npm run dev` to start the dev server
-1. Open http://localhost:3000 in a browser
+1. Open <http://localhost:3000> in a browser
 
 ## Configure Your Course
 
