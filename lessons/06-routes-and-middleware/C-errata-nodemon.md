@@ -20,5 +20,5 @@ npm install nodemon --save-dev
 Once nodemon is installed, update the `dev` script in your package.json file
 
 ```json
-"dev": "nodemon src/index.ts"
+"dev": "nodemon src/index.js"
 ```

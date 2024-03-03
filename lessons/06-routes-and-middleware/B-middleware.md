@@ -7,6 +7,41 @@ const myMiddlware = (req, res, next) => {
 };
 ```
 
+Let's take morgan for example. It's a popular middleware for logging. It logs the request and response to the console. First you need to install it:
+
+```sh
+npm i morgan
+```
+
+Then you add this to your src/server.js file:
+
+```ts
+const morgan = require("morgan");
+
+app.use(morgan("dev"));
+```
+
+Let's add cors to our API. This will allow us to make requests to our API from a different domain. First install it:
+
+```sh
+npm i cors
+```
+
+Then add it to your src/server.js file:
+
+```ts
+const cors = require("cors");
+
+app.use(cors());
+```
+
+Finally we can add two express specific middleware functions:
+
+```ts
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+```
+
 This `next` function is exactly what it sounds like. It tells Express that we're done in the middleware and it's safe to proceed to whatever is next (more middleware or a handler).
 <br>
 To apply the middleware to a route, you can do this:

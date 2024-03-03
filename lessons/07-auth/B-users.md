@@ -1,6 +1,6 @@
 We know from our schema that a user needs a unique username and password. Lets create a handler to create a user. Before we can do that, we'll create some helper functions to hash and compare a user's password so we're not storing it in plain text.
 <br>
-Inside of `src/modules/auth.ts`
+Inside of `src/utils/auth.js`
 
 ```ts
 import * as bcrypt from "bcrypt";
@@ -19,11 +19,11 @@ export const hashPassword = (password) => {
 
 `hashPassword` hashes a password.
 <br>
-Now, let's create that handler inside `src/handlers/user.ts`
+Now, let's create that handler inside `src/handlers/user.js`
 
 ```ts
-import prisma from "../db";
-import { createJWT, hashPassword } from "../modules/auth";
+const prisma = require("../db")
+const { createJWT, hashPassword } = require("../utils/auth");
 
 export const createNewUser = async (req, res) => {
   const hash = await hashPassword(req.body.password);
@@ -68,10 +68,10 @@ export const signin = async (req, res) => {
 Using the provided username, we search for a matching user. We'll get more into how to query with Prisma soon. Then we compare passwords. If it's a match, we create a JWT and send it back.
 
 <br>
-Now we need to create some routes and add these handlers. We can do this in `src/server.ts`
+Now we need to create some routes and add these handlers. We can do this in `src/server.js`
 
 ```ts
-import { createNewUser, signin } from "./handlers/user";
+const { createNewUser, signin } = require("./handlers/user");
 
 app.post("/user", createNewUser);
 app.post("/signin", signin);

@@ -24,3 +24,7 @@ This command will do a few things:
 - Create a prisma folder
 - Create a schema file in that folder
   Next, we'll learn how to design and create some models in our schema
+
+Install the Prisma VS Code plugin. It gives you syntax highlighting and autocompletion for Prisma schema files.
+
+![Prisma VS Code Plugin](./images/prisma-extension.png)

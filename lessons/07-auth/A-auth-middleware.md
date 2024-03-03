@@ -14,12 +14,12 @@ We need to install a few things:
 `npm i jsonwebtoken bcrypt dotenv`
 <br>
 
-Create a new file `src/modules/auth` and add this:
+Create a new file `src/utils/auth` and add this:
 
 ```ts
-import jwt from "jsonwebtoken";
+const jwt = require("jsonwebtoken");
 
-export const createJWT = (user) => {
+const createJWT = (user) => {
   const token = jwt.sign(
     { id: user.id, username: user.username },
     process.env.JWT_SECRET
@@ -33,7 +33,7 @@ This function will take a user and create a JWT from the user's id and username.
 To do that check, we'll create custom middleware.
 
 ```ts
-export const protect = (req, res, next) => {
+const protect = (req, res, next) => {
   const bearer = req.headers.authorization;
 
   if (!bearer) {
@@ -63,23 +63,24 @@ export const protect = (req, res, next) => {
     return;
   }
 };
+
+module.exports = { createJWT, protect };
 ```
 
 This middleware functions checks for a JWT on the `Authorization` header of a request. It then attaches the user to the request object before moving on. If anything fails, the user is sent a 401.
 <br>
 We need to update our `.env` file to have a `JWT_SECRET`. You don't want this secret in your code because it's needed to sign and verify tokens. You can place whatever value you want. Then we need to load in the env file into our environment.
 <br>
-Inside of `src/index.ts`:
+Inside of `src/index.js`:
 
 ```ts
-import * as dotenv from "dotenv";
-dotenv.config();
+require("dotenv").config();
 ```
 
 This will load in our env vars into the process.
 
 <br>
-Lastly, we need to add our middleware onto our API router to protect it, so inside of `src/server.ts`, import protect and add it to the chain:
+Lastly, we need to add our middleware onto our API router to protect it, so inside of `src/server.js`, import protect and add it to the chain:
 
 ```ts
 app.use("/api", protect, router);
