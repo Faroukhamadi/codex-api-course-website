@@ -8,7 +8,7 @@ description: "Build a vanilla, no framework used, API in node.js"
 Node.js comes with everything you need to build a fully functional API. However, it's very tedious and unwise to use the raw modules. For context and appreciation of frameworks, let's do it anyway!
 
 ```javascript
-import http from "http";
+const http = require('http');
 
 const server = http.createServer(async (req, res) => {
   if (req.url === "/" && req.method === "GET") {

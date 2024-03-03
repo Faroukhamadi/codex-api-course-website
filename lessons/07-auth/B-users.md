@@ -3,15 +3,20 @@ We know from our schema that a user needs a unique username and password. Lets c
 Inside of `src/utils/auth.js`
 
 ```ts
-import * as bcrypt from "bcrypt";
+const bcrypt = require("bcrypt");
 
-export const comparePasswords = (password, hash) => {
+const comparePasswords = (password, hash) => {
   return bcrypt.compare(password, hash);
 };
 
-export const hashPassword = (password) => {
+const hashPassword = (password) => {
   return bcrypt.hash(password, 5);
 };
+
+module.exports = {
+  comparePasswords,
+  hashPassword
+}
 ```
 
 `comparePasswords` compare a plain text password and hashed password to see if they're the same.
@@ -25,7 +30,7 @@ Now, let's create that handler inside `src/handlers/user.js`
 const prisma = require("../db")
 const { createJWT, hashPassword } = require("../utils/auth");
 
-export const createNewUser = async (req, res) => {
+const createNewUser = async (req, res) => {
   const hash = await hashPassword(req.body.password);
 
   const user = await prisma.user.create({
@@ -47,7 +52,7 @@ There isn't anything special going on here other than creating a new user then u
 Next, we need to allow a user to sign in.
 
 ```ts
-export const signin = async (req, res) => {
+const signin = async (req, res) => {
   const user = await prisma.user.findUnique({
     where: { username: req.body.username },
   });
@@ -63,6 +68,13 @@ export const signin = async (req, res) => {
   const token = createJWT(user);
   res.json({ token });
 };
+
+
+module.exports = {
+  createNewUser,
+  signin
+}
+
 ```
 
 Using the provided username, we search for a matching user. We'll get more into how to query with Prisma soon. Then we compare passwords. If it's a match, we create a JWT and send it back.
