@@ -21,6 +21,9 @@ We could create an API without a framework, but that wouldn't be the best use of
 
 There are so many great options when choosing a database these days. We'll be using **Psql** or _Postgres_. It's one of the most popular DBs in the world and gives us tons of options when it's time to deploy our API. For the ORM, we'll use Prisma to interact with our DB. Prisma has proven to be a very valuable tool that can create schemas, query our DB, and even handle migrations. It also works with a variety of databases.
 
+![Prisma VS Code Plugin](./images/prisma-extension.png)
+![survey](./images/db-survey.png)
+
 ## Hosting
 
 When it comes to hosting a Node.js based API, you can pretty much close your eyes then point in any direction and you'll be sure to land on a platform that supports Node. This is not a DevOps class, so we want to use a platform that manages it all for us. For that, we'll be using **Render**.
