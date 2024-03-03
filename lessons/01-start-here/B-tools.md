@@ -21,7 +21,6 @@ We could create an API without a framework, but that wouldn't be the best use of
 
 There are so many great options when choosing a database these days. We'll be using **Psql** or _Postgres_. It's one of the most popular DBs in the world and gives us tons of options when it's time to deploy our API. For the ORM, we'll use Prisma to interact with our DB. Prisma has proven to be a very valuable tool that can create schemas, query our DB, and even handle migrations. It also works with a variety of databases.
 
-![Prisma VS Code Plugin](./images/prisma-extension.png)
 ![survey](./images/db-survey.png)
 
 ## Hosting

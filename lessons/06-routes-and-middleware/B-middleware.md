@@ -7,6 +7,9 @@ const myMiddlware = (req, res, next) => {
 };
 ```
 
+![middlewareReject](./images/midd-reject.png)
+![middlewareAccept](./images/midd-accept.png)
+
 Let's take morgan for example. It's a popular middleware for logging. It logs the request and response to the console. First you need to install it:
 
 ```sh
