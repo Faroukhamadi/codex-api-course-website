@@ -1,5 +1,5 @@
 ---
-title: "Errata - Nodemon Setup"
+title: "Nodemon Setup"
 description: "Auto-restart the server with Nodemon"
 ---
 
