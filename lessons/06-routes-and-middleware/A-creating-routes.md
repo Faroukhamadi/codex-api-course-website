@@ -21,13 +21,34 @@ Create a new file, `src/router.js` and work in there.
 const express = require("express");
 const router = express.Router();
 
-router.get("/tweets", (req, res) => {
+router.get("/tweets", async (req, res) => {
+ try {
+  const tweets = await prisma.tweet.findMany({
+   include: {
+    user: true,
+   },
+  });
+  res.json(tweets);
+ } catch (error) {
+  console.error('Error fetching tweets:', error);
+  res.status(500).send('Internal Server Error');
+ }
 });
+
 
 router.get("/tweets/:id", (req, res) => {
 });
 
-router.post("/tweets", (req, res) => {
+router.post("/tweets", async (req, res) => {
+ const content = req.body.content;
+
+ const tweet = await prisma.tweet.create({
+  data: {
+   body: content,
+  },
+ });
+
+ res.json(tweet);
 });
 
 router.put("/tweets/:id", (req, res) => {

@@ -76,3 +76,29 @@ const { createNewUser, signin } = require("./handlers/user");
 app.post("/user", createNewUser);
 app.post("/signin", signin);
 ```
+
+Task for next lesson:
+
+- Add expiration to JWTs
+- Make token output something similar to this
+
+```json
+{
+  "user_id": "usr_cbttlr6873dc33rdqc2g",
+  "email": "faroukhamadi1@outlook.com",
+  "preferred_region": "es",
+  "preferred_locale": "en-us",
+  "iss": "domain.co",
+  "sub": "usr_cbttlr6873dc33rdqc2g",
+  "aud": [
+    "domain.co"
+  ],
+  "exp": 1709588476,
+  "nbf": 1708378875,
+  "iat": 1708378876,
+  "jti": "usr_cbttlr6873dc33rdqc2g"
+}
+```
+
+- Implement user routes
+- Fix tweets route now that we have authentication set up
